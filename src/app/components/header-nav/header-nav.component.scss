@@ -1,0 +1,26 @@
+:host.header-nav {
+  display: block;
+}
+
+ul {
+  li {
+    display: inline-block;
+    margin: 0 15px;
+    &:first-child {
+      margin-left: 0;
+    };
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  a {
+    color: #ffffff;
+    border-bottom: 1px solid transparent;
+    &.active {
+      border-color: #ffffff;
+    }
+    &:hover {
+      border-color: #ffffff;
+    }
+  }
+}

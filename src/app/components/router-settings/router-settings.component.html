@@ -1,0 +1,40 @@
+<h2>
+  Настройки wifi роутера
+</h2>
+
+<form action="">
+  <label>
+    <span>Имя беспроводной сети (SSID)</span><input type="text">
+  </label>
+  <label>
+    <span>Ширина канала</span>
+    <select name="channel-bonding">
+      <option value="5" selected>5 МГц</option>
+      <option value="10">10 МГц</option>
+      <option value="20">20 МГц</option>
+      <option value="40">40 МГц</option>
+      <option value="80">80 МГц</option>
+    </select>
+  </label>
+  <label>
+    <span>Пароль Wi-Fi</span><input type="password" minlength="8" maxlength="63">
+  </label>
+  <label>
+    <span>Расширенные каналы</span>
+    <input type="checkbox" name="extended-channel">
+  </label>
+  <label>
+    <span>Использование разрешённых каналов</span>
+    <input type="checkbox" name="use-channel">
+  </label>
+  <label>
+    <span>Список разрешённых каналов</span>
+    <select name="channel-limit">
+      <option value="5" selected>5 МГц</option>
+      <option value="10">10 МГц</option>
+      <option value="20">20 МГц</option>
+      <option value="40">40 МГц</option>
+      <option value="80">80 МГц</option>
+    </select>
+  </label>
+</form>

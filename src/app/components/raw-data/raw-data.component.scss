@@ -1,0 +1,36 @@
+:host {
+  display: block;
+  max-width: 550px;
+  margin: 0 auto;
+}
+h2 {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #888888;
+  margin-bottom: 35px;
+}
+form {
+  display: block;
+  width: 100%;
+}
+label {
+  display: inline-block;
+  width: 100%;
+  margin-top: 15px;
+  white-space: nowrap;
+  &:first-child {
+    margin-top: 0;
+  }
+  span {
+    display: inline-block;
+    width: 200px;
+    white-space: normal;
+  }
+  input {
+    width: calc(100% - 222px);
+    padding: 5px 10px;
+    margin-left: 20px;
+    box-sizing: border-box;
+    border: 1px solid #888888;
+    border-radius: 2px;
+  }
+}
