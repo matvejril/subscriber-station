@@ -2,23 +2,23 @@
     RAW данные
 </h2>
 
-<form action="">
+<form>
     <label>
-        <span>SSID</span><input type="text">
+        <span>SSID</span><input name="ssid" [ngModel]="routerSettings.ssid" type="text" (input)="changeRawSettingsHandler($event)">
     </label>
     <label>
-        <span>ChannelBonding</span><input type="text">
+        <span>ChannelBonding</span><input name="channelBonding" [ngModel]="routerSettings.channelBonding" type="text" (input)="changeRawSettingsHandler($event)">
     </label>
     <label>
-        <span>WPAKey</span><input type="text">
+        <span>WPAKey</span><input name="wpaKey" [ngModel]="routerSettings.wpaKey" type="text" (input)="changeRawSettingsHandler($event)">
     </label>
     <label>
-        <span>ExtendedChannel</span><input type="text">
+        <span>ExtendedChannel</span><input name="extendedChannel" [ngModel]="routerSettings.extendedChannel" type="text" (input)="changeRawSettingsHandler($event)">
     </label>
     <label>
-        <span>UseChannelLimit</span><input type="text">
+        <span>UseChannelLimit</span><input name="useChannelLimit" [ngModel]="routerSettings.useChannelLimit" type="text" (input)="changeRawSettingsHandler($event)">
     </label>
     <label>
-        <span>ChannelLimit</span><input type="text">
+        <span>ChannelLimit</span><input name="channelLimit" [ngModel]="routerSettings.channelLimit" type="text" (input)="changeRawSettingsHandler($event)">
     </label>
 </form>

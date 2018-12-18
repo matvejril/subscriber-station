@@ -2,6 +2,12 @@
 html, body {
   font-size: 18px;
 }
+button {
+  font-size: 17px;
+  &:hover {
+    cursor: pointer;
+  }
+}
 html, body, h1, h2, h3, h4, h5, h6, p, ul, li {
   margin: 0;
   padding: 0;
@@ -18,4 +24,29 @@ a {
   max-width: 1180px;
   padding: 0 10px;
   margin: 0 auto;
+}
+.btn {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #ffffff;
+}
+.btn.disabled {
+  pointer-events: none;
+  cursor: default;
+  background-color: #bdbdbd;
+  border-color: #bdbdbd;
+}
+.btn-success {
+  border-color: #5cb85c;
+  background-color: #5cb85c;
+  &:hover {
+    background-color: #47a447;
+    border-color: #398439;
+  }
+}
+input, select {
+  border: 1px solid #888888;
+  border-radius: 2px;
+  box-sizing: border-box;
 }

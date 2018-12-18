@@ -2,39 +2,38 @@
   Настройки wifi роутера
 </h2>
 
-<form action="">
-  <label>
-    <span>Имя беспроводной сети (SSID)</span><input type="text">
+<form #myForm="ngForm" (submit)="applyUserSettingsHandler()">
+  <label class="form-group">
+      <span>Имя беспроводной сети (SSID)</span>
+      <input name="ssid" type="text" [(ngModel)]="routerSettings.ssid" required>
   </label>
-  <label>
+  <label class="form-group">
     <span>Ширина канала</span>
-    <select name="channel-bonding">
-      <option value="5" selected>5 МГц</option>
-      <option value="10">10 МГц</option>
-      <option value="20">20 МГц</option>
-      <option value="40">40 МГц</option>
-      <option value="80">80 МГц</option>
-    </select>
+      <select name="channelBonding" (change)="changeExtendedChannel(routerSettings.channelBonding, routerSettings.useChannelLimit)" [(ngModel)]="routerSettings.channelBonding">
+          <option [value]="channel"
+              *ngFor="let channel of channelBondingList">{{channel}} МГц
+          </option>
+      </select>
   </label>
-  <label>
-    <span>Пароль Wi-Fi</span><input type="password" minlength="8" maxlength="63">
+    <label class="form-group">
+      <span>Пароль Wi-Fi</span>
+        <input type="password" name="wpaKey" minlength="8" maxlength="63" [(ngModel)]="routerSettings.wpaKey" required>
   </label>
-  <label>
-    <span>Расширенные каналы</span>
-    <input type="checkbox" name="extended-channel">
+  <label class="form-group" *ngIf="!(routerSettings.channelBonding == '5' || routerSettings.channelBonding == '10')" >
+      <span>Расширенные каналы</span>
+      <input type="checkbox" name="extendedChannel" (change)="changeExtendedChannel(routerSettings.channelBonding, routerSettings.extendedChannel)" [(ngModel)]="routerSettings.extendedChannel">
   </label>
-  <label>
-    <span>Использование разрешённых каналов</span>
-    <input type="checkbox" name="use-channel">
+  <label class="form-group">
+      <span>Использование разрешённых каналов</span>
+      <input type="checkbox" name="useChannelLimit" [(ngModel)]="routerSettings.useChannelLimit">
   </label>
-  <label>
-    <span>Список разрешённых каналов</span>
-    <select name="channel-limit">
-      <option value="5" selected>5 МГц</option>
-      <option value="10">10 МГц</option>
-      <option value="20">20 МГц</option>
-      <option value="40">40 МГц</option>
-      <option value="80">80 МГц</option>
-    </select>
-  </label>
+  <div class="form-group" *ngIf="routerSettings.useChannelLimit">
+      <span>Список разрешённых каналов</span>
+      <div class="channel-limit">
+          <div *ngFor="let channel of routerSettings.channelLimit;">{{channel}}</div>
+      </div>
+  </div>
+    <div class="form-group actions">
+        <button class="btn btn-success" [ngClass]="myForm.valid ? '' : 'disabled'">Применить</button>
+    </div>
 </form>

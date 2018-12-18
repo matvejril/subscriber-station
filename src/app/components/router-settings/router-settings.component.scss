@@ -12,7 +12,7 @@ form {
   display: block;
   width: 100%;
 }
-label {
+.form-group {
   display: inline-block;
   width: 100%;
   margin-top: 15px;
@@ -23,26 +23,50 @@ label {
   span {
     display: inline-block;
     width: 200px;
-    //font-size: 17px;
     white-space: normal;
     text-align: right;
     vertical-align: middle;
   }
   input, select {
-    box-sizing: border-box;
-    border: 1px solid #888888;
-    border-radius: 2px;
     vertical-align: middle;
     width: calc(100% - 222px);
     margin-left: 20px;
+    &.ng-dirty {
+      &.ng-valid {
+        border-color: green;
+      }
+      &.ng-invalid {
+        border-color: red;
+      }
+    }
   }
   input {
-    padding: 5px 10px;
+    padding: 6px 10px;
     &[type="checkbox"] {
       width: auto;
     }
   }
   select {
     padding: 5px 7px;
+  }
+}
+.actions {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.channel-limit {
+  width: calc(100% - 222px);
+  margin-left: 20px;
+  display: inline-flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  font-size: 15px;
+  div {
+    border: 1px solid #888888;
+    padding: 3px;
+    width: calc(100% / 9);
+    text-align: center;
+    box-sizing: border-box;
   }
 }
