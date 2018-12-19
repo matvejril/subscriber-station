@@ -15,20 +15,20 @@ import { RouterSettingsComponent } from './components/router-settings/router-set
 import { RouterSettingsService } from './services/router-settings/router-settings.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    ContentComponent,
-    HeaderNavComponent,
-    RawDataComponent,
-    RouterSettingsComponent,
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AppRoutingModule
-  ],
-  providers: [RouterSettingsService],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        ContentComponent,
+        HeaderNavComponent,
+        RawDataComponent,
+        RouterSettingsComponent,
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        AppRoutingModule
+    ],
+    providers: [RouterSettingsService],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

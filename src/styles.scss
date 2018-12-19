@@ -26,6 +26,7 @@ a {
   margin: 0 auto;
 }
 .btn {
+  border: 1px solid #bdbdbd;
   display: inline-block;
   border-radius: 5px;
   padding: 5px 10px;
@@ -45,7 +46,7 @@ a {
     border-color: #398439;
   }
 }
-input, select {
+input, select, textarea {
   border: 1px solid #888888;
   border-radius: 2px;
   box-sizing: border-box;

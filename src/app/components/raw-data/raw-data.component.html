@@ -3,22 +3,22 @@
 </h2>
 
 <form>
-    <label>
-        <span>SSID</span><input name="ssid" [ngModel]="routerSettings.ssid" type="text" (input)="changeRawSettingsHandler($event)">
+    <label class="">
+        <span>SSID</span><input name="ssid" [ngModel]="routerSettings.ssid" type="text" (input)="changeRouterSettingsHandler($event)">
     </label>
     <label>
-        <span>ChannelBonding</span><input name="channelBonding" [ngModel]="routerSettings.channelBonding" type="text" (input)="changeRawSettingsHandler($event)">
+        <span>ChannelBonding</span><input name="channelBonding" [ngModel]="routerSettings.channelBonding" type="text" (input)="changeRouterSettingsHandler($event)">
     </label>
     <label>
-        <span>WPAKey</span><input name="wpaKey" [ngModel]="routerSettings.wpaKey" type="text" (input)="changeRawSettingsHandler($event)">
+        <span>WPAKey</span><input name="wpaKey" [ngModel]="routerSettings.wpaKey" type="text" (input)="changeRouterSettingsHandler($event)">
     </label>
     <label>
-        <span>ExtendedChannel</span><input name="extendedChannel" [ngModel]="routerSettings.extendedChannel" type="text" (input)="changeRawSettingsHandler($event)">
+        <span>ExtendedChannel</span><input name="extendedChannel" [ngModel]="routerSettings.extendedChannel" type="text" (input)="changeRouterSettingsHandler($event)">
     </label>
     <label>
-        <span>UseChannelLimit</span><input name="useChannelLimit" [ngModel]="routerSettings.useChannelLimit" type="text" (input)="changeRawSettingsHandler($event)">
+        <span>UseChannelLimit</span><input name="useChannelLimit" [ngModel]="routerSettings.useChannelLimit" type="text" (input)="changeRouterSettingsHandler($event)">
     </label>
     <label>
-        <span>ChannelLimit</span><input name="channelLimit" [ngModel]="routerSettings.channelLimit" type="text" (input)="changeRawSettingsHandler($event)">
+        <span>ChannelLimit</span><textarea rows="4" name="channelLimit" [ngModel]="routerSettings.channelLimit" type="text" (input)="changeRouterSettingsHandler($event)"></textarea>
     </label>
 </form>
