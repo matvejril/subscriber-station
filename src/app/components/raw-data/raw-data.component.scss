@@ -1,4 +1,4 @@
-:host {
+:host.raw-data {
   display: block;
   max-width: 550px;
   margin: 0 auto;
@@ -8,11 +8,11 @@ h2 {
   border-bottom: 1px solid #888888;
   margin-bottom: 35px;
 }
-form {
+.raw-form {
   display: block;
   width: 100%;
 }
-label {
+.form-group {
   display: inline-block;
   width: 100%;
   margin-top: 15px;
@@ -34,5 +34,6 @@ label {
     resize: vertical;
     max-height: 300px;
     line-height: 1.4;
+    vertical-align: top;
   }
 }

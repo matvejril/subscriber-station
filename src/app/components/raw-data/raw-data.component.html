@@ -2,23 +2,35 @@
     RAW данные
 </h2>
 
-<form>
-    <label class="">
-        <span>SSID</span><input name="ssid" [ngModel]="routerSettings.ssid" type="text" (input)="changeRouterSettingsHandler($event)">
-    </label>
-    <label>
-        <span>ChannelBonding</span><input name="channelBonding" [ngModel]="routerSettings.channelBonding" type="text" (input)="changeRouterSettingsHandler($event)">
-    </label>
-    <label>
-        <span>WPAKey</span><input name="wpaKey" [ngModel]="routerSettings.wpaKey" type="text" (input)="changeRouterSettingsHandler($event)">
-    </label>
-    <label>
-        <span>ExtendedChannel</span><input name="extendedChannel" [ngModel]="routerSettings.extendedChannel" type="text" (input)="changeRouterSettingsHandler($event)">
-    </label>
-    <label>
-        <span>UseChannelLimit</span><input name="useChannelLimit" [ngModel]="routerSettings.useChannelLimit" type="text" (input)="changeRouterSettingsHandler($event)">
-    </label>
-    <label>
-        <span>ChannelLimit</span><textarea rows="4" name="channelLimit" [ngModel]="routerSettings.channelLimit" type="text" (input)="changeRouterSettingsHandler($event)"></textarea>
-    </label>
+<form class="raw-form">
+    <div class="form-group">
+        <label>
+            <span>SSID</span><input name="ssid" [ngModel]="routerSettings.ssid" type="text" (input)="changeRouterSettingsHandler($event)">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            <span>ChannelBonding</span><input name="channelBonding" [ngModel]="routerSettings.channelBonding" type="text" (input)="changeRouterSettingsHandler($event)">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            <span>WPAKey</span><input name="wpaKey" [ngModel]="routerSettings.wpaKey" type="text" (input)="changeRouterSettingsHandler($event)">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            <span>ExtendedChannel</span><input name="extendedChannel" [ngModel]="routerSettings.extendedChannel" type="text" (input)="changeRouterSettingsHandler($event)">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            <span>UseChannelLimit</span><input name="useChannelLimit" [ngModel]="routerSettings.useChannelLimit" type="text" (input)="changeRouterSettingsHandler($event)">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            <span>ChannelLimit</span><textarea rows="4" name="channelLimit" [ngModel]="routerSettings.channelLimit" type="text" (input)="changeRouterSettingsHandler($event)"></textarea>
+        </label>
+    </div>
 </form>

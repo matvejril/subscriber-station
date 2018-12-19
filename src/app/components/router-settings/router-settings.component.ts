@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 
 import { RouterSettingsService } from '../../services/router-settings/router-settings.service';
 
@@ -7,10 +7,11 @@ import { channelBondingConfig } from '../../shared/channeslConfig';
 @Component({
     selector: 'app-router-settings',
     templateUrl: './router-settings.component.html',
-    styleUrls: ['./router-settings.component.scss']
+    styleUrls: ['./router-settings.component.scss'],
 })
 
 export class RouterSettingsComponent implements OnInit {
+    @HostBinding('class') class = 'router-settings';
     constructor(private routerSettingsService: RouterSettingsService) {}
     routerSettings;
     channelBondingList: string[];

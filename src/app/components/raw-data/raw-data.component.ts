@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostBinding, OnInit} from '@angular/core';
 
 import { RouterSettingsService } from '../../services/router-settings/router-settings.service';
 
 @Component({
     selector: 'app-raw-data',
     templateUrl: './raw-data.component.html',
-    styleUrls: ['./raw-data.component.scss']
+    styleUrls: ['./raw-data.component.scss'],
 })
 
 export class RawDataComponent implements OnInit {
+    @HostBinding('class') class = 'raw-data';
     constructor(private routerSettingsService: RouterSettingsService) {}
     routerSettings;
     ngOnInit() {
