@@ -14,16 +14,28 @@ h2 {
 }
 .form-group {
   width: 100%;
-  margin-top: 15px;
+  margin-top: 22px;
   &:first-child {
     margin-top: 0;
   }
-  span {
+  &__title {
     display: inline-block;
     width: 200px;
     white-space: normal;
     text-align: right;
     vertical-align: middle;
+    line-height: 1;
+  }
+  &__error-msg {
+    position: absolute;
+    display: inline-block;
+    right: 5px;
+    bottom: -22px;
+    font-size: 12px;
+    color: red;
+  }
+  label {
+    position: relative;
   }
   input, select {
     vertical-align: middle;
@@ -55,7 +67,6 @@ h2 {
   white-space: nowrap;
   text-align: right;
 }
-
 .channel-list {
   width: calc(100% - 222px);
   margin-left: 20px;
@@ -69,5 +80,13 @@ h2 {
     width: calc(100% / 9);
     text-align: center;
     box-sizing: border-box;
+    user-select: none;
+    &.select {
+      background-color: #6ba3ff;
+      color: #ffffff;
+    }
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

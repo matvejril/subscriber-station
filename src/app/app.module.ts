@@ -2,6 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+// Пайпы
+import { ArrayJoinPipe } from './pipes/array-join.pipe';
+import { BooleaTransformPipe } from './pipes/boolean-transf.pipe';
+
 // Компоненты
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +26,8 @@ import { RouterSettingsService } from './services/router-settings/router-setting
         HeaderNavComponent,
         RawDataComponent,
         RouterSettingsComponent,
+        ArrayJoinPipe,
+        BooleaTransformPipe
     ],
     imports: [
         BrowserModule,

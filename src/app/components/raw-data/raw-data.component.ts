@@ -2,6 +2,8 @@ import {Component, HostBinding, OnInit} from '@angular/core';
 
 import { RouterSettingsService } from '../../services/router-settings/router-settings.service';
 
+import { IrouterSettings } from '../../interfaces';
+
 @Component({
     selector: 'app-raw-data',
     templateUrl: './raw-data.component.html',
@@ -11,7 +13,7 @@ import { RouterSettingsService } from '../../services/router-settings/router-set
 export class RawDataComponent implements OnInit {
     @HostBinding('class') class = 'raw-data';
     constructor(private routerSettingsService: RouterSettingsService) {}
-    routerSettings;
+    routerSettings: IrouterSettings;
     ngOnInit() {
         this.routerSettings = this.routerSettingsService.getRouterSettings();
     }

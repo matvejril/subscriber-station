@@ -32,5 +32,3 @@ export const extendedChannelConfig = {
             , '128', '132', '136', '140', '144', '149', '153', '157', '161']
     }
 };
-
-export const channelBondingConfig = ['5', '10', '20', '40' , '80'];

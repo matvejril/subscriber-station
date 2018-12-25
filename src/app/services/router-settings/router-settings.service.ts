@@ -1,18 +1,23 @@
 import { extendedChannelConfig } from '../../shared/channeslConfig';
 
-interface IrouterSettings {
-    ssid: string;
-    channelBonding: string;
-    wpaKey: string;
-    extendedChannel: boolean;
-    useChannelLimit: boolean;
-    channelLimit: string[];
-}
+import { IrouterSettings } from '../../interfaces';
+
+const initialSettings: IrouterSettings = {
+    ssid: null,
+    channelBonding: null,
+    wpaKey: null,
+    extendedChannel: null,
+    useChannelLimit: null,
+    channelLimit: [],
+    channelLimitSelect: []
+};
 
 export class RouterSettingsService {
     constructor() { }
-    routerSettings = {};
-    getRouterSettings() {
+    routerSettings: IrouterSettings = {
+        ...initialSettings
+    };
+    getRouterSettings(): IrouterSettings {
         return  {...this.routerSettings};
     }
     changeRouterSettings(name: string, value: any) {
@@ -27,7 +32,7 @@ export class RouterSettingsService {
                 break;
             }
             case('channelLimit'): {
-                valueToType = value.split(',');
+                valueToType = value.split(' ');
                 break;
             }
             default: {
@@ -37,15 +42,20 @@ export class RouterSettingsService {
         this.routerSettings[name] = valueToType;
     }
     applyRouterSettings(settings: IrouterSettings) {
-        let prop: string;
-        for (prop in settings) {
-            this.routerSettings[prop] = settings[prop];
-        }
-        if (settings['useChannelLimit'] === false || !settings.hasOwnProperty('useChannelLimit')) {
+        this.routerSettings = {...settings};
+        const isUseChannelLimit = settings['useChannelLimit'];
+        const isExtendedChannel = settings['extendedChannel'];
+        if (!isUseChannelLimit) {
             this.routerSettings['channelLimit'] = [];
         }
+        if (isExtendedChannel === null) {
+            this.routerSettings['extendedChannel'] = false;
+        }
+        if (isUseChannelLimit === null) {
+            this.routerSettings['useChannelLimit'] = false;
+        }
     }
-    changeExtendedChannel(routerSettings) {
+    changeExtendedChannel(routerSettings: IrouterSettings) {
         let extendedChannelList: string[];
         const channelBonding = routerSettings.channelBonding;
         const extendedChannel = routerSettings.extendedChannel;
@@ -74,5 +84,6 @@ export class RouterSettingsService {
             }
         }
         routerSettings.channelLimit = extendedChannelList;
+        routerSettings.channelLimitSelect = [];
     }
 }
