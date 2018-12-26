@@ -18,28 +18,45 @@ export class RouterSettingsService {
         ...initialSettings
     };
     getRouterSettings(): IrouterSettings {
-        return  {...this.routerSettings};
+        return  {
+            ...this.routerSettings
+        };
     }
+    // Метода выполняет функцию преобразования типов из строк (RAW) к типу из state (IrouterSettings)
     changeRouterSettings(name: string, value: any) {
-        let valueToType: any;
+        let transformToType: any;
         switch (name) {
             case('extendedChannel'): {
-                (value === 'true' || value === true) ? valueToType = true : valueToType = false;
-                break;
+                // Преобразование значения из поля extendedChannel (string) к типу интерфейса IrouterSettings (boolean)
+                const isTrueExtendedChannel = value === 'true' || value === true;
+                if (isTrueExtendedChannel) {
+                    transformToType = true;
+                    break;
+                } else {
+                    transformToType = false;
+                    break;
+                }
             }
             case('useChannelLimit'): {
-                (value === 'true' || value === true) ? valueToType = true : valueToType = false;
-                break;
+                // Преобразование значения из поля useChannelLimit (string) к типу интерфейса IrouterSettings (boolean)
+                const isTrueUseChannelLimit = value === 'true' || value === true;
+                if (isTrueUseChannelLimit) {
+                    transformToType = true;
+                    break;
+                } else {
+                    transformToType = false;
+                    break;
+                }
             }
             case('channelLimit'): {
-                valueToType = value.split(' ');
+                transformToType = value.split(' ');
                 break;
             }
             default: {
-                valueToType = value;
+                transformToType = value;
             }
         }
-        this.routerSettings[name] = valueToType;
+        this.routerSettings[name] = transformToType;
     }
     applyRouterSettings(settings: IrouterSettings) {
         this.routerSettings = {...settings};

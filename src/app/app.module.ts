@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 
 // Пайпы
 import { ArrayJoinPipe } from './pipes/array-join.pipe';
-import { BooleaTransformPipe } from './pipes/boolean-transf.pipe';
 
 // Компоненты
 import { AppRoutingModule } from './app-routing.module';
@@ -26,8 +25,7 @@ import { RouterSettingsService } from './services/router-settings/router-setting
         HeaderNavComponent,
         RawDataComponent,
         RouterSettingsComponent,
-        ArrayJoinPipe,
-        BooleaTransformPipe
+        ArrayJoinPipe
     ],
     imports: [
         BrowserModule,
